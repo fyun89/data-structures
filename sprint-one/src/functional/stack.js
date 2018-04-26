@@ -5,24 +5,24 @@ var Stack = function() {
   var storage = {};
 
   // Implement the methods below
-  var size = 0;
+  var defaultSize = 0;
   someInstance.push = function(value) {
-    size++
-    storage.size = value;
+    storage[defaultSize] = value;
+    defaultSize++;
   };
 
   someInstance.pop = function() {
-    size--
-    var result = storage.size;
-    delete storage.size;
-    return result
+    defaultSize--;
+    var result = storage[defaultSize];
+    delete storage[defaultSize];
+    return result;
   };
 
   someInstance.size = function() {
-    if (size < 0) {
-      size = 0;
+    if (defaultSize < 0) {
+      defaultSize = 0;
     }
-    return size;
+    return defaultSize;
   };
 
   return someInstance;

@@ -16,9 +16,19 @@ var Queue = function() {
 
   someInstance.dequeue = function() {
     size--;
-
-    var firstItem = storage[Object.keys(storage)[0]];
-    delete storage[Object.keys(storage)[0]];
+    var oldestValue = function(array) {
+      if (array.length === 0) {
+        return 'please provide some value';
+      }
+      return _.reduce(array, function(acc, el) {
+        if (acc > el) {
+          acc = el;
+        }
+        return acc;
+      });
+    };
+    var firstItem = storage[oldestValue(Object.keys(storage))];
+    delete storage[oldestValue(Object.keys(storage))];
     return firstItem;
   };
 
