@@ -35,6 +35,7 @@ define([
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 
       it('reports a size of zero for a new stack', function() {
+
         expect(stack.size()).to.equal(0);
       });
 
@@ -50,6 +51,7 @@ define([
       });
 
       it('reports a size of 1 after adding two items and removing one', function() {
+        debugger;
         stack.push('a');
         stack.push('b');
         stack.pop();
