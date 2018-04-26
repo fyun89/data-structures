@@ -7,9 +7,7 @@ var Stack = function() {
 Stack.prototype.push = function(value) {
   var val = this.defaultSize;
   this[val] = value;
-  if (val === undefined) {
-    debugger;
-  }
+
   this.defaultSize++;
 };
 

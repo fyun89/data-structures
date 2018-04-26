@@ -3,31 +3,34 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
   this.defaultSize = 0;
   this.howOld = 0;
-  this.oldestValueArray = [];
 };
 
-var queueMethods = {};
+Queue.prototype.enqueue = function(value) {
 
-queueMethods.enqueue = function(value) {
-  queueMethods[this.howOld] = value;
-  this.oldestValueArray.push(this.howOld);
+  var val = this.defaultSize;
+  this[val] = value;
   this.defaultSize++;
   this.howOld++;
 };
 
-queueMethods.dequeue = function() {
+Queue.prototype.dequeue = function() {
   this.defaultSize--;
-  var firstItem = queueMethods[this.oldestValueArray[0]];
-  delete queueMethods[this.oldestValueArray[0]];
-  queueMethods[this.oldestValueArray.shift()];
+  var firstItemProp = _.reduce(Object.keys(this), function(acc, el){
+    if (acc > el) {
+      acc = el;
+    }
+    return Number(acc);
+  });
+  var firstItem = this[firstItemProp];
+  delete this[firstItemProp];
   return firstItem;
 };
 
-queueMethods.size = function() {
+Queue.prototype.size = function() {
   if (this.defaultSize < 0) {
     this.defaultSize = 0;
   }
   return this.defaultSize;
 };
 
-var N = new Queue();
+var NEWCLASS = new Queue();
