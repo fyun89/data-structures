@@ -11,8 +11,6 @@ var Queue = function() {
 
 var queueMethods = {};
 
-
-
 queueMethods.enqueue = function(value) {
   queueMethods[this.howOld] = value;
   this.oldestValueArray.push(this.howOld);
