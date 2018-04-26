@@ -17,8 +17,8 @@ Queue.prototype.enqueue = function(value) {
 
 Queue.prototype.dequeue = function() {
   this.defaultSize--;
-  var firstItemProp = this.numberOfPops;      0
-  var firstItem = this.storage[firstItemProp];'a'
+  var firstItemProp = this.numberOfPops;
+  var firstItem = this.storage[firstItemProp];
   delete this.storage[firstItemProp];         
   this.numberOfPops++;                        
   return firstItem;

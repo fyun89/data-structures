@@ -17,10 +17,10 @@ class Queue {
 
   dequeue() {
     this.defaultSize--;
-    var firstItemProp = this.numberOfPops;      0
-    var firstItem = this.storage[firstItemProp];'a'
-    delete this.storage[firstItemProp];         
-    this.numberOfPops++;                        
+    var firstItemProp = this.numberOfPops;
+    var firstItem = this.storage[firstItemProp];
+    delete this.storage[firstItemProp];
+    this.numberOfPops++;
     return firstItem;
   }
 
