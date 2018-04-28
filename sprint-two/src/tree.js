@@ -12,10 +12,6 @@ var treeMethods = {};
 treeMethods.addChild = function(value) {
   //debugger;
   var n = new Tree(value);
-
-  // if (this.children.length > maxLength) {
-  //   this.children.children.push(n);
-  // } //replace back
   this.children.push(n);
 };
 
@@ -30,13 +26,12 @@ treeMethods.contains = function(target) {
   //   }
   // }
 
-
   _.each(this.children, function(el) {
     if (el.value === target) {
       trigger = true;
     }else{
       _.each(el.children, function(elem) {
-        if(elem.value === target){
+        if(elem.value === target) {
           trigger = true
         }
       });
