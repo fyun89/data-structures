@@ -2,7 +2,7 @@ var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
   // your code here
-  newTree.children = [];  // fix me
+  newTree.children = [];// fix me
   _.extend(newTree, treeMethods);
   return newTree;
 };
@@ -29,10 +29,10 @@ treeMethods.contains = function(target) {
   _.each(this.children, function(el) {
     if (el.value === target) {
       trigger = true;
-    }else{
+    } else {
       _.each(el.children, function(elem) {
-        if(elem.value === target) {
-          trigger = true
+        if (elem.value === target) {
+          trigger = true;
         }
       });
     }
